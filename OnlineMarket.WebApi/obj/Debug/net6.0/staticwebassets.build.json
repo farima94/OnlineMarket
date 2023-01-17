@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "qevEkxcrpePCLXZZNhpUt9UzXttvtjfooYJI9UekZtI=",
+  "Source": "OnlineMarket.WebApi",
+  "BasePath": "_content/OnlineMarket.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

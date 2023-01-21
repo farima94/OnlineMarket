@@ -22,10 +22,32 @@ public class CategoryDomainService : ICategoryDomainService
         }
         return new  Category(imageUrl, name, description);
     }
+   
+ public async Task UpdateCategoryAsync(Category category, string imageUrl, string name, string description)
+   {
+       if (await CategoryExistsAsync(name, category.Id))
+       {
+           throw new DuplicatePropertyException("Category name is Exist");
+       }
+       category.SetImageUrl(imageUrl);
+       category.SetDescription(description);
+   }
+
+  public async Task UpdateCategoryNameAsync(Category category, string name)
+  {
+      if (await CategoryExistsAsync(name, category.Id))
+      {
+          throw new DuplicatePropertyException("Category name is Exist");
+      }
+      category.SetName(name);
+  }
+   
+
+  
     
     #region validation
 
-    private async Task<bool> CategoryExistsAsync(string name)
+    private async Task<bool> CategoryExistsAsync(string name, int? id=null)
     {
         var query = _context.Categories
             .Where(w => w.Name == name).AsQueryable().AsNoTracking();

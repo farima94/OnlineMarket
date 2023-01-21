@@ -20,3 +20,25 @@ C:\project\private\OnlineMarket\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarke
 C:\project\private\OnlineMarket\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Abstractions.dll
 C:\project\private\OnlineMarket\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
 C:\project\private\OnlineMarket\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\OnlineMarket.Domain.deps.json
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\OnlineMarket.Domain.runtimeconfig.json
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\OnlineMarket.Domain.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\OnlineMarket.Domain.pdb
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\bin\Debug\net6.0\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.csproj.AssemblyReference.cache
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.AssemblyInfoInputs.cache
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.AssemblyInfo.cs
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.csproj.CoreCompileInputs.cache
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.csproj.CopyComplete
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\refint\OnlineMarket.Domain.dll
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.pdb
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\OnlineMarket.Domain.genruntimeconfig.cache
+C:\project\private\OnlineMarket - Copy\OnlineMarket.Domain\obj\Debug\net6.0\ref\OnlineMarket.Domain.dll

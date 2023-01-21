@@ -41,15 +41,15 @@ public class CategoryController : OnlineMarketBaseControllers
     
     //Update Category 
 
-  /*  [HttpPut("{id}")]
-    public async Task<ActionResult> Put(int id,[FromBody] UpdateCategoryCommand command)
+    [HttpPut("{id}")]
+    public async Task<ActionResult<CategoryDto>> Put(int id,[FromForm] UpdateCategoryCommand command)
     {
-        if (commadn.categoryId!=id)
+        if (command.CategoryId!=id)
         {
             
         }
-        await Mediator.Send(commadn);
+        await Mediator.Send(command);
         return NoContent();
-    }*/
+    }
 
 }

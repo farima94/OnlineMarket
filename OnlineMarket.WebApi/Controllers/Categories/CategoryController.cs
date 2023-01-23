@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineMarket.Application.Categories.Commands;
 using OnlineMarket.Application.Categories.Queries;
 using OnlineMarket.Application.Common.Dto.Categories;
+using OnlineMarket.Domain.Exceptions.GeneralExceptions;
 using OnlineMarket.WebApi.Controllers.Base;
 
 namespace OnlineMarket.WebApi.Controllers.Categories;
@@ -46,7 +47,20 @@ public class CategoryController : OnlineMarketBaseControllers
     {
         if (command.CategoryId!=id)
         {
-            
+            throw new BadRequestException("");
+        }
+        await Mediator.Send(command);
+        return NoContent();
+    }
+    
+    //Delete Category 
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> Delete(int id,[FromForm] DeleteCategoryCommand command)
+    {
+        if (command.CategoryId!=id)
+        {
+            throw new BadRequestException("");
         }
         await Mediator.Send(command);
         return NoContent();

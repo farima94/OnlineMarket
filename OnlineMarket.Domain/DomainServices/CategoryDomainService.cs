@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using OnlineMarket.Domain.Entities;
 using OnlineMarket.Domain.Exceptions.CustomExceptions;
@@ -23,15 +24,6 @@ public class CategoryDomainService : ICategoryDomainService
         return new  Category(imageUrl, name, description);
     }
    
- public async Task UpdateCategoryAsync(Category category, string imageUrl, string name, string description)
-   {
-       if (await CategoryExistsAsync(name, category.Id))
-       {
-           throw new DuplicatePropertyException("Category name is Exist");
-       }
-       category.SetImageUrl(imageUrl);
-       category.SetDescription(description);
-   }
 
   public async Task UpdateCategoryNameAsync(Category category, string name)
   {
@@ -40,9 +32,19 @@ public class CategoryDomainService : ICategoryDomainService
           throw new DuplicatePropertyException("Category name is Exist");
       }
       category.SetName(name);
+     
   }
-   
+  
+  public async Task UpdateCategoryDescriptionAsync(Category category, string description)
+  {
+      category.SetDescription(description);
+      
+  }
 
+  public async Task UpdateCategoryImageUrlAsync(Category category, string imageUrl)
+  {
+      category.SetImageUrl(imageUrl);
+  }
   
     
     #region validation
@@ -57,5 +59,5 @@ public class CategoryDomainService : ICategoryDomainService
     }
 
     #endregion
-
+               
 }

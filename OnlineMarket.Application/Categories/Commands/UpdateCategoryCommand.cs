@@ -13,9 +13,7 @@ public class UpdateCategoryCommand : IRequest<CategoryDto>
 {
     public IFormFile? files { get; set; }
     public int CategoryId { get; set; }
-    
     public string?  CategoryName { get; set; }
-    
     public string? Description { get; set; }
 }
 
@@ -50,6 +48,17 @@ public class UpdateCategoryHandler : IRequestHandler<UpdateCategoryCommand, Cate
 
         }
 
+        if (request.Description!=null)
+        {
+            await _categoryDomainService.UpdateCategoryDescriptionAsync(category, request.Description);
+        }
+
+        if (request.files!= null)
+        {
+            var imageUrl=await _fileService.SaveFiles(request.files);
+            await _categoryDomainService.UpdateCategoryImageUrlAsync(category, imageUrl);
+        }
+
         await _context.SaveChangesAsync(cancellationToken);
         
         
@@ -59,11 +68,8 @@ public class UpdateCategoryHandler : IRequestHandler<UpdateCategoryCommand, Cate
             ImageUrl = category.ImageUrl,
             Name = category.Name,                                         
             Description = category.Description
-        }; 
-
-
-     
-
+        };
+        
         return result;
     }
 }

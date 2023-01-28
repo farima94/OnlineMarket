@@ -66,6 +66,32 @@ public class CategoryDomainServiceTest : IDisposable
         await Assert.ThrowsAsync<DuplicatePropertyException>(action);
     }
 
+    
+    
+    [Theory]
+    [InlineData("books")]
+    public async Task UpdateNameCategory_ShouldThrowDuplicatePropertyException_WhenTheCategoryNameHasBeenExisted(
+         string name)
+    {
+        //Arrange
+
+        var categoryDomainService = new CategoryDomainService(_context);
+        var category = await categoryDomainService.CreateCategoryAsync("wfd", name, "feeeeee");
+        _context.Categories.Add(category);
+        await _context.SaveChangesAsync();
+        _catIds.Add(category.Id);
+        
+        //Act
+       var action = async () => {await  categoryDomainService
+           .UpdateCategoryNameAsync(category,name); };
+
+
+        //Assert
+
+       await Assert.ThrowsAsync<DuplicatePropertyException>(action);
+    }
+
+    
     public void Dispose()
     {
         var catsToDelete = _context.Categories.Where(w => _catIds.Any(a => a == w.Id)).ToList();

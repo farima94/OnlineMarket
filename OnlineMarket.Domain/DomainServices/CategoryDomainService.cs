@@ -10,7 +10,7 @@ public class CategoryDomainService : ICategoryDomainService
 {
     private readonly IApplicationDbContext _context;
 
-    public CategoryDomainService(IApplicationDbContext context)
+    public  CategoryDomainService(IApplicationDbContext context)
     {
         _context = context;
     }

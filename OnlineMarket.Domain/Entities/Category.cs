@@ -80,6 +80,13 @@ public class Category : EntityBase
 
     #endregion
 
+    
+    
+    #region relationships
+
+    public List<Product> products { get; set; }
+
+    #endregion
    
 
 }

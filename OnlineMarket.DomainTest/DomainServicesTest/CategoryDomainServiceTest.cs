@@ -90,6 +90,77 @@ public class CategoryDomainServiceTest : IDisposable
 
        await Assert.ThrowsAsync<DuplicatePropertyException>(action);
     }
+    
+    
+    
+    [Theory]
+    [InlineData("books")]
+    public async Task UpdateNameCategory_ShouldSetNewCategoryName_WhenTheNewCategoryNameIsCorrect(
+        string name)
+    {
+        //Arrange
+
+        var categoryDomainService = new CategoryDomainService(_context);
+        var category = await categoryDomainService.CreateCategoryAsync("wfd", "testname", "first test");
+        _context.Categories.Add(category);
+        await _context.SaveChangesAsync();
+        _catIds.Add(category.Id);
+        
+        //Act
+         await  categoryDomainService.UpdateCategoryNameAsync(category,name);
+
+
+        //Assert
+
+         Assert.Equal(category.Name, name);
+    }
+
+    
+    [Theory]
+    [InlineData("dg")]
+    public async Task UpdateDescriptionCategory_ShouldSetNewCategoryDescription_WhenTheNewCategoryDescriptionIsCorrect(
+    string description)
+    {
+        //Arrange
+
+        var categoryDomainService = new CategoryDomainService(_context);
+        var category = await categoryDomainService.CreateCategoryAsync("imageUrl", "name", "desc");
+        _context.Categories.Add(category);
+        await _context.SaveChangesAsync();
+        _catIds.Add(category.Id);
+        
+        //Act
+        await  categoryDomainService.UpdateCategoryDescriptionAsync(category,description);
+
+
+        //Assert
+
+        Assert.Equal(category.Description, description);
+    }
+    
+      
+    [Theory]
+    [InlineData("testImageurl")]
+    [InlineData("urlForFurniture")]
+    public async Task UpdateImageUrlCategory_ShouldSetNewCategoryImageUrl_WhenTheNewCategoryImageUrlIsCorrect(
+        string imageUrl)
+    {
+        //Arrange
+
+        var categoryDomainService = new CategoryDomainService(_context);
+        var category = await categoryDomainService.CreateCategoryAsync("urlForFurniture", "Furniture", "all Furniture fot you home");
+        _context.Categories.Add(category);
+        await _context.SaveChangesAsync();
+        _catIds.Add(category.Id);
+        
+        //Act
+        await  categoryDomainService.UpdateCategoryImageUrlAsync(category,imageUrl);
+
+
+        //Assert
+
+        Assert.Equal(category.ImageUrl, imageUrl);
+    }
 
     
     public void Dispose()
